@@ -1,14 +1,14 @@
-import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
-import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { VStack } from "@chakra-ui/layout";
+import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
+import { Button } from "@chakra-ui/button";
 import { useToast } from "@chakra-ui/toast";
-import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
+import axios from "axios";
 
 const Signup = () => {
-    //states for email, confirming password, picture
+    //states for name, email,password, picture
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [confirmpassword, setConfirmpassword] = useState();
@@ -31,12 +31,12 @@ const Signup = () => {
 
     };
 
-    return <VStack spacing = '5px'>
+    return <VStack spacing = '7px'>
         {/* Name Field */}
         <FormControl id="first-name" isRequired>
             <FormLabel>Name</FormLabel>
-            <Input 
-                placeholder = 'Please Enter Your Name'
+            <Input
+                placeholder = 'Please Enter Name'
                 onChange = {(e)=> setName(e.target.value)}
                 />
         </FormControl>
@@ -46,7 +46,7 @@ const Signup = () => {
             <FormLabel>Email Address</FormLabel>
             <Input
             type="email"
-            placeholder="Enter Your Email Address"
+            placeholder="Please Enter Email Address"
             onChange={(e) => setEmail(e.target.value)}
             />
         </FormControl>
@@ -70,7 +70,7 @@ const Signup = () => {
 
         {/* Picture Field */}
         <FormControl id="pic">
-        <FormLabel>Upload your Picture</FormLabel>
+        <FormLabel>Profile Picture</FormLabel>
         <Input
           type="file"
           p={1.5}
@@ -81,7 +81,7 @@ const Signup = () => {
 
       {/* Signup Button */}
       <Button
-        colorScheme="white"
+        colorScheme="blue"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitFunc}
