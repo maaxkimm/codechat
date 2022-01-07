@@ -10,6 +10,8 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
+import Login from "../components/authentication/Login"
+import Signup from "../components/authentication/Signup"
 
 function Homepage() {
   return (
@@ -27,6 +29,7 @@ function Homepage() {
       >
         <Text fontSize="3xl" fontFamily="Work sans" color='black'>
           CodeChat
+
         </Text>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
@@ -37,6 +40,16 @@ function Homepage() {
             {/* Sign Up Tab */}
             <Tab>Sign Up</Tab>
           </TabList>
+          <TabPanels>
+            <TabPanel>
+              {/* Login Component */}
+              <Login />
+            </TabPanel>
+            <TabPanel>
+              {/* Sign Up Component */}
+              <Signup />
+            </TabPanel>
+          </TabPanels>
         </Tabs>
       </Box>
     </Container>
