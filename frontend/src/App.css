@@ -2,6 +2,7 @@
 .App {
   display: flex;
   background-size: cover;
+  background-image: url("./lightblue.png");
   background-position: center;
   min-height: 100vh;
 }
