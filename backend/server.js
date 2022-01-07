@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const chats  = require("./data/data");
 const connectDB = require("./config/database");
+const userRoutes = require('./routes/userRoutes')
 
 dotenv.config();
 
@@ -9,14 +10,13 @@ connectDB();
 
 const app = express();
 
-//callback takes request, response
-app.get("/", (req, res) => {
-    res.send("API Running");
-})
+//allows acceptance of JSON data
+app.use(express.json());
 
-app.get('/api/chat', (req, res) => {
-    res.send(chats);
-})
+//callback takes request, response
+ 
+//add endpoint for user
+app.use('/api/user', userRoutes)
 
 app.get('/api/chat/:id', (req, res) => {
     const singleChat = chats.find((c)=>c._id == req.params.id);
