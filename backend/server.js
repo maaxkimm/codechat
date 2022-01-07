@@ -3,6 +3,8 @@ const dotenv = require("dotenv");
 const chats  = require("./data/data");
 const connectDB = require("./config/database");
 const userRoutes = require('./routes/userRoutes')
+const {cannotFind, errorHand} = require('./middleware/errorMiddleware')
+
 
 dotenv.config();
 
@@ -18,10 +20,9 @@ app.use(express.json());
 //add endpoint for user
 app.use('/api/user', userRoutes)
 
-app.get('/api/chat/:id', (req, res) => {
-    const singleChat = chats.find((c)=>c._id == req.params.id);
-    res.send(singleChat);
-})
+//error handling middleware
+app.use(cannotFind)
+app.use(errorHand)
 
 const PORT = process.env.PORT || 5000
 
