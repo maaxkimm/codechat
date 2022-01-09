@@ -10,10 +10,20 @@ import {
   Tabs,
   Text,
 } from "@chakra-ui/react";
-import Login from "../components/authentication/Login"
 import Signup from "../components/authentication/Signup"
+import Login from "../components/authentication/Login"
 
 function Homepage() {
+
+  const history = useHistory();
+  useEffect(() => {
+  //if user logged in push to chats page
+    const user = JSON.parse(localStorage.getItem('userInfo'));
+
+
+    if (user) history.push("/chats");
+  }, [history]);
+
   return (
     <Container maxW="xl" centerContent>
       {/* Title Container */}
@@ -28,7 +38,7 @@ function Homepage() {
         borderWidth="1px"
       >
         <Text fontSize="3xl" fontFamily="Work sans" color='black'>
-          CodeChat
+          StoryChat
 
         </Text>
       </Box>
