@@ -11,6 +11,9 @@ const ChatProvider = ({ children }) => {
   const [user, setUser] = useState();
   const history = useHistory();
   const [selectedChat, setSelectedChat] = useState();
+  //populate all chats in chats state
+  const [chats, setChats] = useState([]);
+
 
   //get local storage
   useEffect(() => {
@@ -25,7 +28,7 @@ const ChatProvider = ({ children }) => {
   }}, [history]);
 
   return (
-    <ChatContext.Provider value={{user, setUser}}>
+    <ChatContext.Provider value={{user, setUser, chats, setChats, selectedChat, setSelectedChat}}>
       { children }
     </ChatContext.Provider>
   );

@@ -1,4 +1,4 @@
-import { Input, Avatar, Menu, MenuList, MenuButton, Tooltip, MenuItem, MenuDivider, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerHeader, useToast} from '@chakra-ui/react';
+import { Input, Avatar, Menu, MenuList, MenuButton, Tooltip, MenuItem, MenuDivider, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerHeader, useToast, Spinner} from '@chakra-ui/react';
 import { Button } from "@chakra-ui/button";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Box, Text } from "@chakra-ui/layout";
@@ -23,7 +23,7 @@ const SideDrawer = () => {
     const [loadingChat, setLoadingChat] = useState(false);
     const [search, setSearch] = useState("");
     const [searchResult, setSearchResult] = useState([]);
-    const { user } = ChatState();
+    const { user, setSelectedChat, chats, setChats } = ChatState();
     
     //function handling logout
     const logoutFunc = () => {
@@ -71,7 +71,44 @@ const SideDrawer = () => {
     };
 
     //get chat function
-    const getChat = (userId) => {};
+    const getChat = async(userId) => {
+        try {
+            setLoadingChat(true);
+
+            const config = {
+                headers: {
+                    "Content-type": "application/json",
+                    Authorization: `Bearer ${user.token}`,
+                },
+            };
+
+            //make api request
+
+
+            const {data} = await axios.post('/api/chat', { userId }, config);
+
+            //if found in list, update list by appending
+            if (!chats.find((c) => c._id === data._id)) {
+                setChats([data, ...chats])
+            }
+
+            setSelectedChat(data);
+            setLoadingChat(false);
+            onClose();
+            
+        } catch (error) {
+            toast({
+                title: "Error getting chat",
+                description: error.message,
+                status: "error",
+                duration: 4000,
+                isClosable: true,
+                position: "bottom-left",
+            });
+        }
+
+
+    };
 
 
     return (
@@ -128,7 +165,7 @@ const SideDrawer = () => {
                         user = {user}
                         func = {() => getChat(user._id)}
                     />)))}
-
+                    {loadingChat && <Spinner ml="auto" d="flex" />}
                     </DrawerBody>
                 </DrawerContent>
             </Drawer>
