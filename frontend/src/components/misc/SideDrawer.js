@@ -1,4 +1,4 @@
-import { Avatar, Menu, MenuList, MenuButton, Tooltip, MenuItem, MenuDivider, Drawer, DrawerOverlay, DrawerContent, DrawerHeader} from '@chakra-ui/react';
+import { Input, Avatar, Menu, MenuList, MenuButton, Tooltip, MenuItem, MenuDivider, Drawer, DrawerBody, DrawerOverlay, DrawerContent, DrawerHeader} from '@chakra-ui/react';
 import { Button } from "@chakra-ui/button";
 import { BellIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { Box, Text } from "@chakra-ui/layout";
@@ -73,6 +73,13 @@ const SideDrawer = () => {
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
+                    <DrawerBody>
+                    <Box d = "flex" pb = {2}>
+                        <Input placeholder="Search by name or email" mr = {2} value = 
+                        {search} onChange={(a) => setSearch(a.target.value)}/>
+                    </Box>
+                    {/*<Button onClick = {searchFunc}>Go</Button>*/}
+                    </DrawerBody>
                 </DrawerContent>
             </Drawer>
         </div>
