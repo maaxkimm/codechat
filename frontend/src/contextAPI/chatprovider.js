@@ -24,8 +24,7 @@ const ChatProvider = ({ children }) => {
   }}, [history]);
 
   return (
-    <ChatContext.Provider
-      value = {{user, setUser}}>
+    <ChatContext.Provider value={{user, setUser}}>
       { children }
     </ChatContext.Provider>
   );
