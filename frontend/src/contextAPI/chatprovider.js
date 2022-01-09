@@ -10,6 +10,7 @@ const ChatProvider = ({ children }) => {
   //const [selectedChat, setSelectedChat] = useState();
   const [user, setUser] = useState();
   const history = useHistory();
+  const [selectedChat, setSelectedChat] = useState();
 
   //get local storage
   useEffect(() => {
