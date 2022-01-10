@@ -157,9 +157,9 @@ const SideDrawer = () => {
                     <DrawerHeader borderBottomWidth="1px">Search Users</DrawerHeader>
                     <DrawerBody>
                     <Box d = "flex" pb={1}>
-                        <Input placeholder="Search using name or email" mr = {2} value = 
-                        {search} onChange={(a) => setSearch(a.target.value)}/>
-                        <Button onClick = {searchFunc}>Go</Button>
+                        <Input placeholder="Search with name or email" mr = {2} value = 
+                        {search} onChange={(a) => setSearch(a.target.value)} fontSize="14px"/>
+                        <Button onClick = {searchFunc} textColor="green">GO</Button>
                     </Box>
                     {loading ? (<ChatLoading />) : (searchResult?.map((user) => (<UserList key = {user._id} 
                         user = {user}

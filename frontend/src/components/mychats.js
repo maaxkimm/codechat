@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { ChatState } from '../contextAPI/chatprovider';
 import { Button, useToast } from "@chakra-ui/react";
-import { Box, Text, Stack } from "@chakra-ui/layout"
+import { Box, Text, Stack } from "@chakra-ui/layout";
+import GroupChat from './misc/groupchat';
 import axios from 'axios';
 import { getSender } from "../config/chatsender"
 import ChatLoading from './chatloading';
-import { AddIcon } from '@chakra-ui/icons';
 
 const MyChats = () => {
 
@@ -69,12 +69,14 @@ const MyChats = () => {
 
         My CodeChats
 
-
-        <Button
-            d="flex"
-            fontSize={{ base: "14px", md: "10px", lg: "14px" }}>
-            New Group Chat
-        </Button>
+        <GroupChat>
+            <Button
+                d="flex"
+                textColor="green"
+                fontSize={{ base: "14px", md: "12px", lg: "14px" }}>
+                New Group Chat
+            </Button>
+        </GroupChat>
        
 
 
