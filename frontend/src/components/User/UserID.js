@@ -10,10 +10,11 @@ const UserID = ({ user, handleFunc }) => {
                 py={1}
                 borderRadius="lg"
                 m={1}
-                mb={2}
+                mb={1}
                 variant="solid"
                 fontSize={12}
-                colorScheme="blue"
+                backgroundColor="green"
+                color="white"
                 cursor="pointer"
                 onClick={handleFunc}
                 >

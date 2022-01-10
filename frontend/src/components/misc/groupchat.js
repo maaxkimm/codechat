@@ -179,7 +179,6 @@ const GroupChat = ({ children }) => {
               ))}
             </Box>
 
-
             {loading ? (
               <div>Loading...</div>
             ) : (
