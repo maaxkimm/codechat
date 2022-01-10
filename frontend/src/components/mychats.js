@@ -7,7 +7,7 @@ import axios from 'axios';
 import { getSender } from "../config/chatsender"
 import ChatLoading from './chatloading';
 
-const MyChats = () => {
+const MyChats = ( { fetchAgain } ) => {
 
     const { selectedChat, setSelectedChat, chats, setChats, user } = ChatState();
     const [logUser, setLogUser] = useState();
@@ -44,7 +44,7 @@ const MyChats = () => {
     useEffect(() => {
         setLogUser(JSON.parse(localStorage.getItem("userInfo")));
         fetchChats();
-    }, [])
+    }, [fetchAgain])
 
     return (
         <Box
