@@ -8,7 +8,9 @@ A real-time chat application & game inspired by the popular quarantine game Stor
 - Server, Back-End: Node.js as web server, Express.js as web framework
 - Database: MongoDB
 
-# Purpose: Practice Concepts Related But Not Limited To:
+# Purpose:
+
+Practice Concepts Related But Not Limited To:
 
 - React: constructing reusable components, virtual DOM, hooks
 - Node: managing APIs, connecting front-end with DB, Node Package Manager
