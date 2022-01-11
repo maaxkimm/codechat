@@ -40,6 +40,7 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
+//authenticate user during login
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 

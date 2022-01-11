@@ -1,5 +1,18 @@
-import {Button, useDisclosure, FormControl, Input, useToast, Box, 
-    Modal, ModalOverlay, ModalContent, ModalHeader, ModalFooter, ModalBody, ModalCloseButton} from "@chakra-ui/react";
+import {
+  Button,
+  useDisclosure,
+  FormControl,
+  Input,
+  useToast,
+  Box,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 import UserID from "../User/UserID";
 import UserList from "../User/UserList";
 import axios from "axios";
@@ -7,16 +20,15 @@ import { useState } from "react";
 import { ChatState } from "../../contextAPI/chatprovider";
 
 const GroupChat = ({ children }) => {
-
   const [search, setSearch] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [loading, setLoading] = useState(false);
   const toast = useToast();
-  
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [groupChatName, setGroupChatName] = useState();
 
-  //selected users array in which we''ll be appending/deleting from to determine the selected users for a chat
+  //selected users array in which we'll be appending/deleting from to determine the selected users for a chat
   const [selectedUsers, setSelectedUsers] = useState([]);
 
   const { user, chats, setChats } = ChatState();
@@ -45,7 +57,6 @@ const GroupChat = ({ children }) => {
       setLoading(false);
 
       setSearchResult(data);
-
     } catch (error) {
       toast({
         title: "Error Occured!",
@@ -134,7 +145,7 @@ const GroupChat = ({ children }) => {
     <>
       <span onClick={onOpen}>{children}</span>
 
-      <Modal isOpen={isOpen} onClose = {onClose} isCentered>
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader
@@ -148,7 +159,6 @@ const GroupChat = ({ children }) => {
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody d="flex" flexDir="column" alignItems="center">
-
             {/* Set Group Chat Name Form */}
             <FormControl>
               <Input
@@ -167,15 +177,10 @@ const GroupChat = ({ children }) => {
               />
             </FormControl>
 
-
             {/* Delete Function Form */}
             <Box w="100%" d="flex" flexWrap="wrap">
               {selectedUsers.map((u) => (
-                <UserID
-                  key={u._id}
-                  user={u}
-                  handleFunc={() => deleteFunc(u)}
-                />
+                <UserID key={u._id} user={u} handleFunc={() => deleteFunc(u)} />
               ))}
             </Box>
 
@@ -192,7 +197,6 @@ const GroupChat = ({ children }) => {
                   />
                 ))
             )}
-
           </ModalBody>
 
           <ModalFooter>
@@ -200,11 +204,10 @@ const GroupChat = ({ children }) => {
               Create Chat
             </Button>
           </ModalFooter>
-
         </ModalContent>
       </Modal>
     </>
   );
 };
 
-export default GroupChat
+export default GroupChat;

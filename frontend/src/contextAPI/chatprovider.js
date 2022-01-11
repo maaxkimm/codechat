@@ -1,19 +1,16 @@
 import { useHistory } from "react-router-dom";
-import React, { Children, createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const ChatContext = createContext();
 
 const ChatProvider = ({ children }) => {
-
-  //const [notification, setNotification] = useState([]);
-  //const [chats, setChats] = useState();
-  //const [selectedChat, setSelectedChat] = useState();
   const [user, setUser] = useState();
+
   const history = useHistory();
+
   const [selectedChat, setSelectedChat] = useState();
   //populate all chats in chats state
   const [chats, setChats] = useState([]);
-
 
   //get local storage
   useEffect(() => {
@@ -22,14 +19,15 @@ const ChatProvider = ({ children }) => {
 
     //if user not logged in, redirected to login page
     if (!userInfo) {
-
       history.push("/");
-
-  }}, [history]);
+    }
+  }, [history]);
 
   return (
-    <ChatContext.Provider value={{user, setUser, chats, setChats, selectedChat, setSelectedChat}}>
-      { children }
+    <ChatContext.Provider
+      value={{ user, setUser, chats, setChats, selectedChat, setSelectedChat }}
+    >
+      {children}
     </ChatContext.Provider>
   );
 };
@@ -39,4 +37,3 @@ export const ChatState = () => {
 };
 
 export default ChatProvider;
- 

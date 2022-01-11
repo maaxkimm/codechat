@@ -2,12 +2,12 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/userModel.js");
 const asyncHandler = require("express-async-handler");
 
+//for authorization
 const protect = asyncHandler(async (req, res, next) => {
   let token;
 
   if (
     req.headers.authorization &&
-
     //bearer token
     req.headers.authorization.startsWith("Bearer")
   ) {

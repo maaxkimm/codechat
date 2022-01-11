@@ -56,10 +56,10 @@ const accessChat = asyncHandler(async (req, res) => {
 
 const fetchChats = asyncHandler(async (req, res) => {
   try {
-    //match element in users array  
+    //match element in users array
     Chat.find({ users: { $elemMatch: { $eq: req.user._id } } })
 
-    //populate everything returned
+      //populate everything returned
       .populate("users", "-password")
       .populate("groupAdmin", "-password")
       .populate("latestMessage")
@@ -112,6 +112,7 @@ const createGroupChat = asyncHandler(async (req, res) => {
   }
 });
 
+//rename group function
 const renameGroup = asyncHandler(async (req, res) => {
   const { chatId, chatName } = req.body;
 
@@ -121,7 +122,7 @@ const renameGroup = asyncHandler(async (req, res) => {
       chatName: chatName,
     },
     {
-    //return updated value
+      //return updated value
       new: true,
     }
   )
@@ -136,6 +137,7 @@ const renameGroup = asyncHandler(async (req, res) => {
   }
 });
 
+//remove group function
 const removeFromGroup = asyncHandler(async (req, res) => {
   const { chatId, userId } = req.body;
 
@@ -159,6 +161,7 @@ const removeFromGroup = asyncHandler(async (req, res) => {
   }
 });
 
+//add to group function
 const addToGroup = asyncHandler(async (req, res) => {
   const { chatId, userId } = req.body;
 
