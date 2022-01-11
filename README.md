@@ -34,8 +34,6 @@ WIP: compiling and appending chat history to get runnable code
 `npm install`
 `cd frontend`
 `npm install`
-Start Server
 `npm start`
 `cd frontend`
-Start Client
 `npm start`
