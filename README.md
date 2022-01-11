@@ -1,6 +1,6 @@
 # CodeChat
 
-A real-time chat application & game inspired by the popular quarantine game Story Chat, where players send lines of code one by one at a time, creating a snippet of optionally functioning code together!
+A real-time chat application & game inspired by the popular quarantine game Story Chat, where players send lines of code one by one at a time, creating a snippet of optionally functioning code together! Unlimited players :D
 
 # Tools
 
@@ -21,11 +21,15 @@ Practice Concepts Related But Not Limited To:
 # Basic Data Flow
 
 In simplified terms:
-React.js i.e. front-end --> sends a request to fetch all chats from our DB (GET i.e. /api/chat) to the web framework i.e. Express.js --> sends to Node.js i.e. the web server --> uses mongoose to connect to MongoDB and makes a query to the DB, which compiles the query and sends the query back to the Node.js i.e. web server --> Express.js i.e. web framework --> sent back to React.js in form of JSON
+React.js i.e. front-end &rarr; sends a request to fetch all chats from our DB (GET i.e. /api/chat) to the web framework i.e. Express.js &rarr; sends to Node.js i.e. the web server &rarr; uses mongoose to connect to MongoDB and makes a query to the DB, which compiles the query and sends the query back to the Node.js i.e. web server &rarr; Express.js i.e. web framework &rarr; sent back to React.js in form of JSON
 
-# Small Note
+# Important Note
 
-WIP: compiling and appending chat history to get runnable code
+Current Features:
+
+- Chatting in real-time: one-on-one and group chats, login and signup with name, email, picture, search users, create chat and group chats, view profile and view other users' profiles
+
+WIP: compiling and appending chat history to get runnable code, creating toast to display code snippet ideas, etc.
 
 # Run Locally
 
