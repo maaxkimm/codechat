@@ -23,7 +23,7 @@ React.js i.e. front-end --> sends a request to fetch all chats from our DB (GET 
 
 # Small Note
 
-WIP: working on compiling and appending chat history to get runnable code
+WIP: compiling and appending chat history to get runnable code
 
 # Run Locally
 
