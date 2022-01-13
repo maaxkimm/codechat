@@ -31,6 +31,15 @@ Current Features:
 
 WIP: compiling and appending chat history to get runnable code, creating toast to display code snippet ideas, etc.
 
+# Demo & Sample Endpoints
+<img width="1263" alt="Screen Shot 2022-01-10 at 9 40 14 PM" src="https://user-images.githubusercontent.com/68135908/149277196-8eeeb8ae-2024-4e43-bc38-36f9acd03e10.png">
+<img width="1260" alt="Screen Shot 2022-01-10 at 9 42 52 PM" src="https://user-images.githubusercontent.com/68135908/149277200-61c13755-c664-45fb-9921-2791e3c15fee.png">
+<img width="1267" alt="Screen Shot 2022-01-10 at 9 43 32 PM" src="https://user-images.githubusercontent.com/68135908/149277202-d1d39916-f7e1-4e5b-a520-095278fb781f.png">
+<img width="1261" alt="Screen Shot 2022-01-10 at 9 43 45 PM" src="https://user-images.githubusercontent.com/68135908/149277205-085ddc8c-10d8-4bad-98d3-d0fa41ffd413.png">
+<img width="1282" alt="Screen Shot 2022-01-10 at 9 44 38 PM" src="https://user-images.githubusercontent.com/68135908/149277209-77330b48-d176-4976-ab57-c314ae04e2bb.png">
+<img width="1282" alt="Screen Shot 2022-01-10 at 9 45 07 PM" src="https://user-images.githubusercontent.com/68135908/149277211-e6f9636f-6d69-41e4-8fcd-9ed507fc2c0c.png">
+<img width="1276" alt="Screen Shot 2022-01-10 at 9 45 36 PM" src="https://user-images.githubusercontent.com/68135908/149277213-6ef8c1f7-06f1-4acc-a3b9-87ec2a81d45d.png">
+
 # Run Locally
 
 `git clone https://github.com/maaxkimm/codechat`
